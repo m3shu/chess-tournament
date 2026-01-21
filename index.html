@@ -11,7 +11,9 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 30px;
+            color: #000;
         }
 
         .tournament-title {
@@ -40,6 +42,44 @@
             font-weight: bold;
             padding: 10px;
         }
+
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .round {
+            margin-bottom: 35px;
+        }
+
+        .round h2 {
+            border-bottom: 2px solid #000;
+            padding-bottom: 6px;
+            margin-bottom: 15px;
+        }
+
+        .match {
+            border: 1px solid #000;
+            padding: 12px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        /* Print-specific styling */
+        @media print {
+            body {
+                margin: 15mm;
+            }
+
+            .match {
+                page-break-inside: avoid;
+            }
+
+            h1 {
+                page-break-after: avoid;
+            }
+        }
     </style>
 </head>
 <body>
@@ -65,17 +105,17 @@
         </tr>
         <tr>
             <th></th>
-    <th>Milton</th><th>Master</th><th>Sojib</th><th>GM</th><th>Meshu</th><th>Rishan</th><th>Sofiq</th><th>Sohag</th><th>Monir</th><th>Rasel</th><th>Total</th></tr>
-<tr><th>Milton</th><td>—</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><th>Master</th><td></td><td>—</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><th>Sojib</th><td></td><td></td><td>—</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><th>GM</th><td></td><td></td><td></td><td>—</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><th>Meshu</th><td></td><td></td><td></td><td></td><td>—</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><th>Rishan</th><td></td><td></td><td></td><td></td><td></td><td>—</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><th>Sofiq</th><td></td><td></td><td></td><td></td><td></td><td></td><td>—</td><td></td><td></td><td></td><td></td></tr>
-<tr><th>Sohag</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>—</td><td></td><td></td><td></td></tr>
-<tr><th>Monir</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>—</td><td></td><td></td></tr>
-<tr><th>Rasel</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>—</td><td></td></tr>
+    <th>মিল্টন</th><th>মাস্টার</th><th>সজিব</th><th>জি এম</th><th>মিশু</th><th>রিশান</th><th>শফিক</th><th>সোহাগ</th><th>মনির</th><th>রাসেল</th><th>Total</th></tr>
+<tr><th>মিল্টন</th><td>—</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th>মাস্টার</th><td></td><td>—</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th>সজিব</th><td></td><td></td><td>—</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th>জি এম</th><td></td><td></td><td></td><td>—</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th>মিশু</th><td></td><td></td><td></td><td></td><td>—</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th>রিশান</th><td></td><td></td><td></td><td></td><td></td><td>—</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th>শফিক</th><td></td><td></td><td></td><td></td><td></td><td></td><td>—</td><td></td><td></td><td></td><td></td></tr>
+<tr><th>সোহাগ</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>—</td><td></td><td></td><td></td></tr>
+<tr><th>মনির</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>—</td><td></td><td></td></tr>
+<tr><th>রাসেল</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>—</td><td></td></tr>
 </table>
 
     <table>
@@ -86,18 +126,41 @@
         </tr>
         <tr>
             <th></th>
-    <th>Sattar</th><th>Dalim</th><th>Niyamot</th><th>Oli</th><th>Juwel</th><th>Akber</th><th>Raju</th><th>Belayet</th><th>Ruhul Amin</th><th>Robi</th><th>Total</th></tr>
-<tr><th>Sattar</th><td>—</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><th>Dalim</th><td></td><td>—</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><th>Niyamot</th><td></td><td></td><td>—</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><th>Oli</th><td></td><td></td><td></td><td>—</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><th>Juwel</th><td></td><td></td><td></td><td></td><td>—</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><th>Akber</th><td></td><td></td><td></td><td></td><td></td><td>—</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><th>Raju</th><td></td><td></td><td></td><td></td><td></td><td></td><td>—</td><td></td><td></td><td></td><td></td></tr>
-<tr><th>Belayet</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>—</td><td></td><td></td><td></td></tr>
-<tr><th>Ruhul Amin</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>—</td><td></td><td></td></tr>
-<tr><th>Robi</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>—</td><td></td></tr>
+    <th>সাত্তার</th><th>ডালিম</th><th>নিয়ামত</th><th>অলি</th><th>জুয়েল</th><th>আকবর</th><th>রাজু</th><th>বেলায়েত</th><th>রুহুল আমিন</th><th>রবি</th><th>Total</th></tr>
+<tr><th>সাত্তার</th><td>—</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th>ডালিম</th><td></td><td>—</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th>নিয়ামত</th><td></td><td></td><td>—</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th>অলি</th><td></td><td></td><td></td><td>—</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th>জুয়েল</th><td></td><td></td><td></td><td></td><td>—</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th>আকবর</th><td></td><td></td><td></td><td></td><td></td><td>—</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th>রাজু</th><td></td><td></td><td></td><td></td><td></td><td></td><td>—</td><td></td><td></td><td></td><td></td></tr>
+<tr><th>বেলায়েত</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>—</td><td></td><td></td><td></td></tr>
+<tr><th>রুহুল আমিন</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>—</td><td></td><td></td></tr>
+<tr><th>রবি</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>—</td><td></td></tr>
 </table>
+
+
+    <!-- Quarter Finals -->
+    <div class="round">
+        <h2>Quarter Finals</h2>
+        <div class="match">Group A - 1 vs Group B - 4</div>
+        <div class="match">Group A - 2 vs Group B - 3</div>
+        <div class="match">Group B - 1 vs Group A - 4</div>
+        <div class="match">Group B - 2 vs Group A - 3</div>
+    </div>
+
+    <!-- Semi Finals -->
+    <div class="round">
+        <h2>Semi Finals</h2>
+        <div class="match">Winner QF 1 vs Winner QF 2</div>
+        <div class="match">Winner QF 3 vs Winner QF 4</div>
+    </div>
+
+    <!-- Final -->
+    <div class="round">
+        <h2>Final</h2>
+        <div class="match">Winner SF 1 vs Winner SF 2</div>
+    </div>
 
 </body>
 </html>
