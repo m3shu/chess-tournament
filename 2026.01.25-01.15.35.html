@@ -395,43 +395,35 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 
 <script>
-
 (function () {
-    const tables = document.querySelectorAll('.group-table');
-    if (!tables.length) return;
+    const table = document.querySelector('.group-table');
+    if (!table) return;
 
-    tables.forEach(table => {
-        const rows = table.querySelectorAll('tr');
-        if (rows.length < 2) return;
+    // Get player count (header row, excluding first empty th and Total)
+    const headerRow = table.querySelectorAll('tr')[1];
+    const totalPlayers = headerRow.querySelectorAll('th').length - 2;
 
-        const headerRow = rows[1];
-        const totalPlayers = headerRow.querySelectorAll('th').length - 2;
-        if (totalPlayers < 2) return;
+    // Total possible games: n(n-1)/2
+    const totalGames = (totalPlayers * (totalPlayers - 1)) / 2;
 
-        const totalGames = (totalPlayers * (totalPlayers - 1)) / 2;
-
-        let resultCells = 0;
-        table.querySelectorAll('td.win, td.loss').forEach(td => {
-            if (td.textContent.trim() !== '') {
-                resultCells++;
-            }
-        });
-
-        const completedGames = resultCells / 2;
-
-        // Get the current group name from the header
-        const groupHeader = table.querySelector('.group-header');
-        if (groupHeader) {
-            let groupName = groupHeader.textContent.trim().split(':')[1]; 
-            // fallback if format unexpected
-            if (!groupName) groupName = 'Unknown';
-            groupHeader.textContent =
-                `Group:${groupName.trim()} (${completedGames} of ${totalGames} games complete)`;
+    // Count completed result cells (win/loss with number)
+    let resultCells = 0;
+    table.querySelectorAll('td.win, td.loss').forEach(td => {
+        if (td.textContent.trim() !== '') {
+            resultCells++;
         }
     });
+
+    // Each game appears twice in matrix
+    const completedGames = resultCells / 2;
+
+    // Update group header
+    const groupHeader = table.querySelector('.group-header');
+    if (groupHeader) {
+        groupHeader.textContent =
+            `Group : A (${completedGames} of ${totalGames} games complete)`;
+    }
 })();
-
-
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>

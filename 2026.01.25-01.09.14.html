@@ -285,7 +285,13 @@ document.addEventListener('DOMContentLoaded', function () {
 </style>
 
     <style>
-
+        body {
+            font-family: "Kalpurush", Arial, sans-serif;
+            background: #fff;
+            color: #000;
+            margin: 30px;
+            line-height: 1.5;
+        }
         h1 {
             text-align: center;
             margin-bottom: 20px;
@@ -316,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function () {
     </style>
 
 
-<h1>সংক্ষিপ্ত নিয়মাবলি</h1>
+<h1>পূর্ণ নিয়মাবলি</h1>
 
 <h2>১. টুর্নামেন্ট ফরম্যাট</h2>
 <ul>
@@ -375,19 +381,18 @@ document.addEventListener('DOMContentLoaded', function () {
 <ul>
     <li>খেলার সময় কোনো কথা বলা যাবে না</li>
     <li>মোবাইল ফোন ও ইলেকট্রনিক ডিভাইস সম্পূর্ণ নিষিদ্ধ</li>
-    <li><strong>খেলার সময় কোনো খেলোয়াড়ের ফোন বাজলে = সরাসরি Game Loss</strong></li>
 </ul>
 
 <h2>৯. দর্শনার্থী (Visitors)</h2>
 <ul>
     <li>দর্শনার্থীদের টুর্নামেন্ট পরিচালনায় সহযোগিতা করার অনুরোধ করা হচ্ছে</li>
-    <li>প্রয়োজনে বিচার কার্যক্রমে সহায়তা করতে পারবেন</li>
+    <li>প্রয়োজনে সালিশ কার্যক্রমে সহায়তা করতে পারবেন</li>
     <li>তবে খেলার সময় বোর্ডের কাছে কথা বলা বা হস্তক্ষেপ করা যাবে না</li>
 </ul>
 
-<h2>১০. বিচারক (Arbiter)</h2>
+<h2>১০. সালিশ (Arbiter)</h2>
 <ul>
-    <li>বিচারকের সিদ্ধান্তই চূড়ান্ত</li>
+    <li>সালিশের সিদ্ধান্তই চূড়ান্ত</li>
 </ul>
 
 <div class="note">
@@ -395,43 +400,35 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 
 <script>
-
 (function () {
-    const tables = document.querySelectorAll('.group-table');
-    if (!tables.length) return;
+    const table = document.querySelector('.group-table');
+    if (!table) return;
 
-    tables.forEach(table => {
-        const rows = table.querySelectorAll('tr');
-        if (rows.length < 2) return;
+    // Get player count (header row, excluding first empty th and Total)
+    const headerRow = table.querySelectorAll('tr')[1];
+    const totalPlayers = headerRow.querySelectorAll('th').length - 2;
 
-        const headerRow = rows[1];
-        const totalPlayers = headerRow.querySelectorAll('th').length - 2;
-        if (totalPlayers < 2) return;
+    // Total possible games: n(n-1)/2
+    const totalGames = (totalPlayers * (totalPlayers - 1)) / 2;
 
-        const totalGames = (totalPlayers * (totalPlayers - 1)) / 2;
-
-        let resultCells = 0;
-        table.querySelectorAll('td.win, td.loss').forEach(td => {
-            if (td.textContent.trim() !== '') {
-                resultCells++;
-            }
-        });
-
-        const completedGames = resultCells / 2;
-
-        // Get the current group name from the header
-        const groupHeader = table.querySelector('.group-header');
-        if (groupHeader) {
-            let groupName = groupHeader.textContent.trim().split(':')[1]; 
-            // fallback if format unexpected
-            if (!groupName) groupName = 'Unknown';
-            groupHeader.textContent =
-                `Group:${groupName.trim()} (${completedGames} of ${totalGames} games complete)`;
+    // Count completed result cells (win/loss with number)
+    let resultCells = 0;
+    table.querySelectorAll('td.win, td.loss').forEach(td => {
+        if (td.textContent.trim() !== '') {
+            resultCells++;
         }
     });
+
+    // Each game appears twice in matrix
+    const completedGames = resultCells / 2;
+
+    // Update group header
+    const groupHeader = table.querySelector('.group-header');
+    if (groupHeader) {
+        groupHeader.textContent =
+            `Group : A (${completedGames} of ${totalGames} games complete)`;
+    }
 })();
-
-
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>

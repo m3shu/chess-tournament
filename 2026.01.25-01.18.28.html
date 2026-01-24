@@ -395,21 +395,25 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 
 <script>
-
 (function () {
     const tables = document.querySelectorAll('.group-table');
     if (!tables.length) return;
 
     tables.forEach(table => {
+        // Get header row (2nd row)
         const rows = table.querySelectorAll('tr');
         if (rows.length < 2) return;
 
         const headerRow = rows[1];
+
+        // Player count (exclude first empty th + Total)
         const totalPlayers = headerRow.querySelectorAll('th').length - 2;
         if (totalPlayers < 2) return;
 
+        // Total possible games: n(n-1)/2
         const totalGames = (totalPlayers * (totalPlayers - 1)) / 2;
 
+        // Count completed result cells
         let resultCells = 0;
         table.querySelectorAll('td.win, td.loss').forEach(td => {
             if (td.textContent.trim() !== '') {
@@ -417,20 +421,18 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
+        // Each game appears twice in matrix
         const completedGames = resultCells / 2;
 
-        // Get the current group name from the header
+        // Update THIS table's group header
         const groupHeader = table.querySelector('.group-header');
         if (groupHeader) {
-            let groupName = groupHeader.textContent.trim().split(':')[1]; 
-            // fallback if format unexpected
-            if (!groupName) groupName = 'Unknown';
+            const groupName = groupHeader.dataset.group || 'A';
             groupHeader.textContent =
-                `Group:${groupName.trim()} (${completedGames} of ${totalGames} games complete)`;
+                `Group : ${groupName} (${completedGames} of ${totalGames} games complete)`;
         }
     });
 })();
-
 
 </script>
 
