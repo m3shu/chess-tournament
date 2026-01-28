@@ -43,8 +43,8 @@
 
 
     .group-table tr:hover {
-        background-color: #f0f8ff;
-        border-left: 4px solid #4a90e2; /* your accent color */
+        background-color: rgba(255, 255, 0, .5);
+        border: 3px dashed black;
     }
 
     .group-header {
@@ -56,10 +56,8 @@
     a{
         cursor: pointer;
     }
-</style>
 
-<style>
-/* Existing screen colors */
+
 .win  { background: #c8f7c5; }
 .draw { background: #cce5ff; }
 .loss { background: #f7c5c5; }
@@ -84,8 +82,10 @@
     }
 
     .group-table tr:hover {
-        border-left: 1px solid black;
+        border: 1px solid black;
+        background-color:#fff;
     }
+
 }
 </style>
 <style>
@@ -137,7 +137,7 @@
         </tr>
         <tr>
             <th></th>
-    <th>মিল্টন</th><th>মাস্টার</th><th>সজিব</th><th>জি এম</th><th>মিশু</th><th>রিশান</th><th>শফিক</th><th>সোহাগ</th><th>মনির</th><th>রাসেল</th><th>Total</th></tr><tr><th>মিল্টন</th><td>—</td><td class=""></td><td class="win">2</td><td class=""></td><td class="loss">0</td><td class="win">2</td><td class=""></td><td class="win">2</td><td class="draw">1</td><td class="loss">0</td><td class="total incomplete" data-total="7">7</td></tr><tr><th>মাস্টার</th><td class=""></td><td>—</td><td class=""></td><td class=""></td><td class=""></td><td class=""></td><td class=""></td><td class=""></td><td class=""></td><td class=""></td><td class="total incomplete" data-total="0">0</td></tr><tr><th>সজিব</th><td class="loss">0</td><td class=""></td><td>—</td><td class="win">2</td><td class="loss">0</td><td class=""></td><td class="loss">0</td><td class="win">2</td><td class="win">2</td><td class=""></td><td class="total incomplete" data-total="6">6</td></tr><tr><th>জি এম</th><td class=""></td><td class=""></td><td class="loss">0</td><td>—</td><td class=""></td><td class=""></td><td class="loss">0</td><td class="loss">0</td><td class="loss">0</td><td class=""></td><td class="total incomplete" data-total="0">0</td></tr><tr><th>মিশু</th><td class="win">2</td><td class=""></td><td class="win">2</td><td class=""></td><td>—</td><td class="loss">0</td><td class="win">2</td><td class="win">2</td><td class=""></td><td class=""></td><td class="total incomplete" data-total="8">8</td></tr><tr><th>রিশান</th><td class="loss">0</td><td class=""></td><td class=""></td><td class=""></td><td class="win">2</td><td>—</td><td class=""></td><td class="win">2</td><td class="win">2</td><td class="loss">0</td><td class="total incomplete" data-total="6">6</td></tr><tr><th>শফিক</th><td class=""></td><td class=""></td><td class="win">2</td><td class="win">2</td><td class="loss">0</td><td class=""></td><td>—</td><td class="loss">0</td><td class="loss">0</td><td class="win">2</td><td class="total incomplete" data-total="6">6</td></tr><tr><th>সোহাগ</th><td class="loss">0</td><td class=""></td><td class="loss">0</td><td class="win">2</td><td class="loss">0</td><td class="loss">0</td><td class="win">2</td><td>—</td><td class="loss">0</td><td class="loss">0</td><td class="total incomplete" data-total="4">4</td></tr><tr><th>মনির</th><td class="draw">1</td><td class=""></td><td class="loss">0</td><td class="win">2</td><td class=""></td><td class="loss">0</td><td class="win">2</td><td class="win">2</td><td>—</td><td class="draw">1</td><td class="total incomplete" data-total="8">8</td></tr><tr><th>রাসেল</th><td class="win">2</td><td class=""></td><td class=""></td><td class=""></td><td class=""></td><td class="win">2</td><td class="loss">0</td><td class="win">2</td><td class="draw">1</td><td>—</td><td class="total incomplete" data-total="7">7</td></tr></table>
+    <th>মিল্টন</th><th>মাস্টার</th><th>সজিব</th><th>জি এম</th><th>মিশু</th><th>রিশান</th><th>শফিক</th><th>সোহাগ</th><th>মনির</th><th>রাসেল</th><th>Total</th></tr><tr><th class='name'>মিল্টন</th><td>—</td><td class=""></td><td class="win">2</td><td class=""></td><td class="loss">0</td><td class="win">2</td><td class=""></td><td class="win">2</td><td class="draw">1</td><td class="loss">0</td><td class="total incomplete" data-total="7">7</td></tr><tr><th class='name'>মাস্টার</th><td class=""></td><td>—</td><td class=""></td><td class=""></td><td class=""></td><td class=""></td><td class=""></td><td class=""></td><td class=""></td><td class=""></td><td class="total incomplete" data-total="0">0</td></tr><tr><th class='name'>সজিব</th><td class="loss">0</td><td class=""></td><td>—</td><td class="win">2</td><td class="loss">0</td><td class=""></td><td class="loss">0</td><td class="win">2</td><td class="win">2</td><td class=""></td><td class="total incomplete" data-total="6">6</td></tr><tr><th class='name'>জি এম</th><td class=""></td><td class=""></td><td class="loss">0</td><td>—</td><td class=""></td><td class=""></td><td class="loss">0</td><td class="loss">0</td><td class="loss">0</td><td class=""></td><td class="total incomplete" data-total="0">0</td></tr><tr><th class='name'>মিশু</th><td class="win">2</td><td class=""></td><td class="win">2</td><td class=""></td><td>—</td><td class="loss">0</td><td class="win">2</td><td class="win">2</td><td class=""></td><td class=""></td><td class="total incomplete" data-total="8">8</td></tr><tr><th class='name'>রিশান</th><td class="loss">0</td><td class=""></td><td class=""></td><td class=""></td><td class="win">2</td><td>—</td><td class=""></td><td class="win">2</td><td class="win">2</td><td class="loss">0</td><td class="total incomplete" data-total="6">6</td></tr><tr><th class='name'>শফিক</th><td class=""></td><td class=""></td><td class="win">2</td><td class="win">2</td><td class="loss">0</td><td class=""></td><td>—</td><td class="loss">0</td><td class="loss">0</td><td class="win">2</td><td class="total incomplete" data-total="6">6</td></tr><tr><th class='name'>সোহাগ</th><td class="loss">0</td><td class=""></td><td class="loss">0</td><td class="win">2</td><td class="loss">0</td><td class="loss">0</td><td class="win">2</td><td>—</td><td class="loss">0</td><td class="loss">0</td><td class="total incomplete" data-total="4">4</td></tr><tr><th class='name'>মনির</th><td class="draw">1</td><td class=""></td><td class="loss">0</td><td class="win">2</td><td class=""></td><td class="loss">0</td><td class="win">2</td><td class="win">2</td><td>—</td><td class="draw">1</td><td class="total incomplete" data-total="8">8</td></tr><tr><th class='name'>রাসেল</th><td class="win">2</td><td class=""></td><td class=""></td><td class=""></td><td class=""></td><td class="win">2</td><td class="loss">0</td><td class="win">2</td><td class="draw">1</td><td>—</td><td class="total incomplete" data-total="7">7</td></tr></table>
     <table class="group-table">
         <tr>
             <th class="group-header" colspan="12">
@@ -146,7 +146,7 @@
         </tr>
         <tr>
             <th></th>
-    <th>সাত্তার</th><th>ডালিম</th><th>আকবর</th><th>অলি</th><th>জুয়েল</th><th>রাকিব</th><th>রাজু</th><th>বেলায়েত</th><th>দুলাভাই</th><th>রবি</th><th>Total</th></tr><tr><th>সাত্তার</th><td>—</td><td class="win">2</td><td class="win">2</td><td class="win">2</td><td class=""></td><td class="loss">0</td><td class=""></td><td class="win">2</td><td class="loss">0</td><td class="loss">0</td><td class="total incomplete" data-total="8">8</td></tr><tr><th>ডালিম</th><td class="loss">0</td><td>—</td><td class="win">2</td><td class="win">2</td><td class="win">2</td><td class="loss">0</td><td class="win">2</td><td class=""></td><td class="loss">0</td><td class="win">2</td><td class="total incomplete" data-total="10">10</td></tr><tr><th>আকবর</th><td class="loss">0</td><td class="loss">0</td><td>—</td><td class=""></td><td class="loss">0</td><td class="loss">0</td><td class=""></td><td class="loss">0</td><td class=""></td><td class=""></td><td class="total incomplete" data-total="0">0</td></tr><tr><th>অলি</th><td class="loss">0</td><td class="loss">0</td><td class=""></td><td>—</td><td class="win">2</td><td class="win">2</td><td class="loss">0</td><td class=""></td><td class=""></td><td class="win">2</td><td class="total incomplete" data-total="6">6</td></tr><tr><th>জুয়েল</th><td class=""></td><td class="loss">0</td><td class="win">2</td><td class="loss">0</td><td>—</td><td class="win">2</td><td class="loss">0</td><td class=""></td><td class="win">2</td><td class="win">2</td><td class="total incomplete" data-total="8">8</td></tr><tr><th>রাকিব</th><td class="win">2</td><td class="win">2</td><td class="win">2</td><td class="loss">0</td><td class="loss">0</td><td>—</td><td class="win">2</td><td class=""></td><td class=""></td><td class="win">2</td><td class="total incomplete" data-total="10">10</td></tr><tr><th>রাজু</th><td class=""></td><td class="loss">0</td><td class=""></td><td class="win">2</td><td class="win">2</td><td class="loss">0</td><td>—</td><td class=""></td><td class="win">2</td><td class="win">2</td><td class="total incomplete" data-total="8">8</td></tr><tr><th>বেলায়েত</th><td class="loss">0</td><td class=""></td><td class="win">2</td><td class=""></td><td class=""></td><td class=""></td><td class=""></td><td>—</td><td class=""></td><td class="win">2</td><td class="total incomplete" data-total="4">4</td></tr><tr><th>দুলাভাই</th><td class="win">2</td><td class="win">2</td><td class=""></td><td class=""></td><td class="loss">0</td><td class=""></td><td class="loss">0</td><td class=""></td><td>—</td><td class=""></td><td class="total incomplete" data-total="4">4</td></tr><tr><th>রবি</th><td class="win">2</td><td class="loss">0</td><td class=""></td><td class="loss">0</td><td class="loss">0</td><td class="loss">0</td><td class="loss">0</td><td class="loss">0</td><td class=""></td><td>—</td><td class="total incomplete" data-total="2">2</td></tr></table>  <style>
+    <th>সাত্তার</th><th>ডালিম</th><th>আকবর</th><th>অলি</th><th>জুয়েল</th><th>রাকিব</th><th>রাজু</th><th>বেলায়েত</th><th>দুলাভাই</th><th>রবি</th><th>Total</th></tr><tr><th class='name'>সাত্তার</th><td>—</td><td class="win">2</td><td class="win">2</td><td class="win">2</td><td class=""></td><td class="loss">0</td><td class=""></td><td class="win">2</td><td class="loss">0</td><td class="loss">0</td><td class="total incomplete" data-total="8">8</td></tr><tr><th class='name'>ডালিম</th><td class="loss">0</td><td>—</td><td class="win">2</td><td class="win">2</td><td class="win">2</td><td class="loss">0</td><td class="win">2</td><td class=""></td><td class="loss">0</td><td class="win">2</td><td class="total incomplete" data-total="10">10</td></tr><tr><th class='name'>আকবর</th><td class="loss">0</td><td class="loss">0</td><td>—</td><td class=""></td><td class="loss">0</td><td class="loss">0</td><td class=""></td><td class="loss">0</td><td class=""></td><td class=""></td><td class="total incomplete" data-total="0">0</td></tr><tr><th class='name'>অলি</th><td class="loss">0</td><td class="loss">0</td><td class=""></td><td>—</td><td class="win">2</td><td class="win">2</td><td class="loss">0</td><td class=""></td><td class=""></td><td class="win">2</td><td class="total incomplete" data-total="6">6</td></tr><tr><th class='name'>জুয়েল</th><td class=""></td><td class="loss">0</td><td class="win">2</td><td class="loss">0</td><td>—</td><td class="win">2</td><td class="loss">0</td><td class=""></td><td class="win">2</td><td class="win">2</td><td class="total incomplete" data-total="8">8</td></tr><tr><th class='name'>রাকিব</th><td class="win">2</td><td class="win">2</td><td class="win">2</td><td class="loss">0</td><td class="loss">0</td><td>—</td><td class="win">2</td><td class=""></td><td class=""></td><td class="win">2</td><td class="total incomplete" data-total="10">10</td></tr><tr><th class='name'>রাজু</th><td class=""></td><td class="loss">0</td><td class=""></td><td class="win">2</td><td class="win">2</td><td class="loss">0</td><td>—</td><td class=""></td><td class="win">2</td><td class="win">2</td><td class="total incomplete" data-total="8">8</td></tr><tr><th class='name'>বেলায়েত</th><td class="loss">0</td><td class=""></td><td class="win">2</td><td class=""></td><td class=""></td><td class=""></td><td class=""></td><td>—</td><td class=""></td><td class="win">2</td><td class="total incomplete" data-total="4">4</td></tr><tr><th class='name'>দুলাভাই</th><td class="win">2</td><td class="win">2</td><td class=""></td><td class=""></td><td class="loss">0</td><td class=""></td><td class="loss">0</td><td class=""></td><td>—</td><td class=""></td><td class="total incomplete" data-total="4">4</td></tr><tr><th class='name'>রবি</th><td class="win">2</td><td class="loss">0</td><td class=""></td><td class="loss">0</td><td class="loss">0</td><td class="loss">0</td><td class="loss">0</td><td class="loss">0</td><td class=""></td><td>—</td><td class="total incomplete" data-total="2">2</td></tr></table>  <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
             margin: 30px;
@@ -317,7 +317,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     </style>
 
-
 <h1>সংক্ষিপ্ত নিয়মাবলি</h1>
 
 <h2>১. টুর্নামেন্ট ফরম্যাট</h2>
@@ -345,7 +344,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <h2>৪. টাচ-মুভ নিয়ম</h2>
 <ul>
     <li>নিজের ঘুঁটি ধরলে সেটিতেই চাল দিতে হবে (যদি বৈধ চাল থাকে)</li>
-    <li>প্রতিপক্ষের  ঘুঁটি ধরলে সেটি অবশ্যই ক্যাপচার করতে হবে (যদি সম্ভব হয়)</li>
+    <li>প্রতিপক্ষের ঘুঁটি ধরলে সেটি অবশ্যই ক্যাপচার করতে হবে (যদি সম্ভব হয়)</li>
 </ul>
 
 <h2>৫. অবৈধ চাল (Illegal Move)</h2>
@@ -379,14 +378,30 @@ document.addEventListener('DOMContentLoaded', function () {
     <li>খেলার সময় অনুগ্রহ করে মোবাইল ফোন সাইলেন্ট (নীরব) অবস্থায় রাখুন।</li>
 </ul>
 
-<h2>৯. দর্শনার্থী (Visitors)</h2>
+<h2>৯. সমান পয়েন্ট হলে টাই ব্রেক নিয়ম</h2>
+<ul>
+    <li>
+        <strong>প্রথম অগ্রাধিকার – হেড টু হেড ফলাফল:</strong><br>
+        সমান পয়েন্টে থাকা খেলোয়াড়দের মধ্যে যিনি সরাসরি খেলায় জয়ী হয়েছেন, তিনি এগিয়ে থাকবেন।
+    </li>
+    <li>
+        <strong>দ্বিতীয় অগ্রাধিকার – Sonneborn-Berger স্কোর:</strong><br>
+        যাদের বিরুদ্ধে জয় হয়েছে তাদের মোট পয়েন্ট যোগ হবে, ড্র হলে অর্ধেক যোগ হবে।
+    </li>
+    <li>
+        <strong>তৃতীয় অগ্রাধিকার – মোট জয়ের সংখ্যা:</strong><br>
+        যিনি বেশি ম্যাচ জিতেছেন তিনি এগিয়ে থাকবেন।
+    </li>
+</ul>
+
+<h2>১০. দর্শনার্থী (Visitors)</h2>
 <ul>
     <li>দর্শনার্থীদের টুর্নামেন্ট পরিচালনায় সহযোগিতা করার অনুরোধ করা হচ্ছে</li>
     <li>প্রয়োজনে বিচার কার্যক্রমে সহায়তা করতে পারবেন</li>
     <li>তবে খেলার সময় বোর্ডের কাছে কথা বলা বা হস্তক্ষেপ করা যাবে না</li>
 </ul>
 
-<h2>১০. বিচারক (Arbiter)</h2>
+<h2>১১. বিচারক (Arbiter)</h2>
 <ul>
     <li>বিচারকের সিদ্ধান্তই চূড়ান্ত</li>
 </ul>
@@ -394,7 +409,6 @@ document.addEventListener('DOMContentLoaded', function () {
 <div class="note">
     সকল খেলোয়াড়ের জন্য এই নিয়মাবলি বাধ্যতামূলক
 </div>
-
 <script>
 
 (function () {
@@ -511,6 +525,107 @@ window.onclick = e => {
   if (e.target.id === 'resultModal')
     document.getElementById('resultModal').style.display = 'none';
 };
+</script>
+<div id="tieModal" class="modal">
+  <div class="modal-box">
+    <span class="close">×</span>
+    <h3 id="playerTitle"></h3>
+    <div id="tieBody"></div>
+  </div>
+</div>
+
+<style>
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  z-index:9999;
+}
+
+.modal-box{
+  background:#fff;
+  width:95%;
+  max-width:420px;
+  margin:12vh auto;
+  padding:16px;
+  border-radius:12px;
+  font-size:15px;
+}
+
+.close{
+  float:right;
+  font-size:26px;
+  cursor:pointer;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+$(function(){
+
+  $("table.group-table th.name").css("cursor","pointer").on("click", function(){
+
+    const $row = $(this).closest("tr");
+    const $table = $(this).closest("table");
+
+    const player = $(this).text().trim();
+
+    let sb = 0;
+    let wins = 0;
+
+    const headers = $table.find("tr:eq(1) th").map(function(){
+        return $(this).text().trim();
+    }).get();
+
+    $row.find("td").each(function(i){
+
+      if(i === 0 || i === $row.find("td").length-1) return;
+
+      const result = $(this).text().trim();
+      if(!result) return;
+
+      const opponent = headers[i];
+
+      const $opRow = $table.find("tr").filter(function(){
+        return $(this).find("th.name").text().trim() === opponent;
+      });
+
+      const opponentTotal = parseFloat(
+        $opRow.find("td:last").text()
+      ) || 0;
+
+      console.log(opponentTotal);
+
+      if(result == "2"){
+        sb += opponentTotal;
+        wins++;
+      }
+      if(result == "1"){
+        sb += opponentTotal/2;
+      }
+    });
+
+    $("#playerTitle").text(player + " — Tie Break");
+
+    $("#tieBody").html(`
+      <ul>
+        <li><b>Priority 1:</b> Head to Head</li>
+        <li><b>Priority 2:</b> Sonneborn-Berger = ${sb.toFixed(2)}</li>
+        <li><b>Priority 3:</b> Total Wins = ${wins}</li>
+      </ul>
+    `);
+
+    $("#tieModal").fadeIn();
+
+  });
+
+  $(".close, .modal").on("click", function(e){
+     if(e.target === this) $("#tieModal").fadeOut();
+  });
+
+});
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
