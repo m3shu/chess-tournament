@@ -57,16 +57,6 @@
         cursor: pointer;
     }
 
-th.name{
-    cursor: pointer;
-}
-
-#currentTime {
-    text-align: right;
-    font-size: 12px;
-    color: #555;
-    padding: 6px 10px;
-}
 
 .win  { background: #c8f7c5; }
 .draw { background: #cce5ff; }
@@ -498,9 +488,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <script>
 document.querySelectorAll('.group-table td').forEach(td => {
-
-  if (td.classList.contains('total')) return; 
-  
   td.addEventListener('click', function () {
     const value = this.textContent.trim();
     if (value === '' || value === '—') return;
@@ -691,74 +678,6 @@ $(function(){
         padding: 12px;
         border-radius: 12px;
     }
-</style><script>
-(function () {
-    if (window.location.protocol === 'file:') {
-
-
-        //time at top
-        document.addEventListener('DOMContentLoaded', function () {
-
-            function formatDateTime() {
-                const now = new Date();
-
-                const time = now.toLocaleTimeString('en-US', {
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    hour12: true
-                });
-
-                const date = now.toLocaleDateString('en-GB', {
-                    day: '2-digit',
-                    month: 'long',
-                    year: 'numeric'
-                });
-
-                return `${time} / ${date}`;
-            }
-
-            document.body.insertAdjacentHTML(
-                'afterbegin',
-                `<div id="currentTime">${formatDateTime()}</div>`
-            );
-        });
-
-
-
-        // no hover or click effect
-        const style = document.createElement('style');
-        style.innerHTML = `
-            * {
-                pointer-events: none;
-            }
-        `;
-        document.head.prepend(style); // add at beginning
-
-
-
-        // delete everyting after group table for easy screenshot
-        document.addEventListener("DOMContentLoaded", function () {
-            const tables = document.querySelectorAll('.group-table');
-            if (!tables.length) return;
-
-            const lastTable = tables[tables.length - 1];
-
-            let next = lastTable.nextSibling;
-            while (next) {
-                const toRemove = next;
-                next = next.nextSibling;
-                toRemove.remove();
-            }
-        });
-
-
-
-
-
-    }
-})();
-</script>
-
-
+</style>
 </body>
 </html>
