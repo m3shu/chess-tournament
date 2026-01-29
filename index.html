@@ -714,12 +714,18 @@ $(function(){
     }
 </style><script>
 (function () {
-    if (window.location.protocol === 'file:') {
 
+    let executed = false;
 
-        //time at top
-        document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('keydown', function (e) {
+        if (executed) return;
 
+        if (e.shiftKey && e.key === 'Delete') {
+            executed = true;
+
+            /* =========================
+               TIME AT TOP
+            ========================= */
             function formatDateTime() {
                 const now = new Date();
 
@@ -742,44 +748,40 @@ $(function(){
                 'afterbegin',
                 `<div id="currentTime">${formatDateTime()}</div>`
             );
-        });
 
+            /* =========================
+               DISABLE HOVER / CLICK
+            ========================= */
+            const style = document.createElement('style');
+            style.innerHTML = `
+                * {
+                    pointer-events: none !important;
+                }
+            `;
+            document.head.prepend(style);
 
-
-        // no hover or click effect
-        const style = document.createElement('style');
-        style.innerHTML = `
-            * {
-                pointer-events: none;
-            }
-        `;
-        document.head.prepend(style); // add at beginning
-
-
-
-        // delete everyting after group table for easy screenshot
-        document.addEventListener("DOMContentLoaded", function () {
+            /* =========================
+               DELETE EVERYTHING AFTER
+               LAST GROUP TABLE
+            ========================= */
             const tables = document.querySelectorAll('.group-table');
-            if (!tables.length) return;
+            if (tables.length) {
+                const lastTable = tables[tables.length - 1];
+                let next = lastTable.nextSibling;
 
-            const lastTable = tables[tables.length - 1];
-
-            let next = lastTable.nextSibling;
-            while (next) {
-                const toRemove = next;
-                next = next.nextSibling;
-                toRemove.remove();
+                while (next) {
+                    const toRemove = next;
+                    next = next.nextSibling;
+                    toRemove.remove();
+                }
             }
-        });
 
+            console.log('Screenshot mode activated');
+        }
+    });
 
-
-
-
-    }
 })();
 </script>
-
 
 </body>
 </html>
