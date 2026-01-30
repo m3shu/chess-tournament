@@ -51,10 +51,21 @@
         font-size: 16px;
         font-weight: bold;
         padding: 10px;
+        position: relative;
     }
 
     a{
         cursor: pointer;
+    }
+
+    .game-complete-info{
+        font-size: 12px;
+        text-align: right;
+        position: absolute;
+        right: 10px;
+        line-height: 20px;
+        color: #777;
+        font-weight: normal;
     }
 
 th.name{
@@ -94,6 +105,10 @@ th.name{
     .group-table tr:hover {
         border: 1px solid black;
         background-color:#fff;
+    }
+
+    .game-complete-info{
+        display: none;
     }
 
 }
@@ -421,7 +436,6 @@ document.addEventListener('DOMContentLoaded', function () {
     সকল খেলোয়াড়ের জন্য এই নিয়মাবলি বাধ্যতামূলক
 </div>
 <script>
-
 (function () {
     const tables = document.querySelectorAll('.group-table');
     if (!tables.length) return;
@@ -450,9 +464,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (groupHeader) {
             let groupName = groupHeader.textContent.trim().split(':')[1]; 
             // fallback if format unexpected
+
             if (!groupName) groupName = 'Unknown';
-            groupHeader.textContent =
-                `Group : ${groupName.trim()} (${completedGames} out of ${totalGames} games completed)`;
+
+            groupHeader.innerHTML =
+                `Group : ${groupName.trim()} <span class="game-complete-info"> ${completedGames} out of ${totalGames} games completed, ${totalGames - completedGames} games remaining </span>`;
         }
     });
 })();
