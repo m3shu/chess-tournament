@@ -271,84 +271,100 @@ th.name{
 
 
 </div>
-  <style>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 30px;
+        color: #000;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .round {
+        margin-bottom: 35px;
+    }
+
+    .round h2 {
+        border-bottom: 2px solid #000;
+        padding-bottom: 6px;
+        margin-bottom: 15px;
+    }
+
+    .match {
+        border: 1px solid #000;
+        padding: 12px;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    .winner {
+        font-weight: bold;
+    }
+
+    /* Print-specific styling */
+    @media print {
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 30px;
-            color: #000;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .round {
-            margin-bottom: 35px;
-        }
-
-        .round h2 {
-            border-bottom: 2px solid #000;
-            padding-bottom: 6px;
-            margin-bottom: 15px;
+            margin: 15mm;
         }
 
         .match {
-            border: 1px solid #000;
-            padding: 12px;
-            margin-bottom: 10px;
-            font-size: 16px;
+            page-break-inside: avoid;
         }
 
-        /* Print-specific styling */
-        @media print {
-            body {
-                margin: 15mm;
-            }
-
-            .match {
-                page-break-inside: avoid;
-            }
-
-            h1 {
-                page-break-after: avoid;
-            }
+        h1 {
+            page-break-after: avoid;
         }
-    </style>
-    <!-- Quarter Finals -->
-	<div class="round">
-		<h2>♟️ Quarter Finals</h2>
+    }
+</style>
 
-		<div class="match">
-			Group A – 1 (রিশান) vs Group B – 4 (সাত্তার)
-		</div>
+<!-- Quarter Finals -->
+<div class="round">
+    <h2>♟️ Quarter Finals</h2>
 
-		<div class="match">
-			Group A – 2 (মিশু) vs Group B – 3 (জুয়েল)
-		</div>
-
-		<div class="match">
-			Group B – 1 (রাকিব) vs Group A – 4 (মাস্টার)
-		</div>
-
-		<div class="match">
-			Group B – 2 (ডালিম) vs Group A – 3 (মিল্টন)
-		</div>
-	</div>
-
-
-    <!-- Semi Finals -->
-    <div class="round">
-        <h2>Semi Finals</h2>
-        <div class="match">Winner QF 1 vs Winner QF 3</div>
-        <div class="match">Winner QF 2 vs Winner QF 4</div>
+    <div class="match">
+        Group A – 1 (রিশান) vs Group B – 4 (সাত্তার) <br>
+        ➤ Winner: <span class="winner">সাত্তার</span>
     </div>
 
-    <!-- Final -->
-    <div class="round">
-        <h2>Final</h2>
-        <div class="match">Winner SF 1 vs Winner SF 2</div>
+    <div class="match">
+        Group A – 2 (মিশু) vs Group B – 3 (জুয়েল) <br>
+        ➤ Winner: <span class="winner">মিশু</span>
     </div>
+
+    <div class="match">
+        Group B – 1 (রাকিব) vs Group A – 4 (মাস্টার) <br>
+        ➤ Winner: <span class="winner">রাকিব</span>
+    </div>
+
+    <div class="match">
+        Group B – 2 (ডালিম) vs Group A – 3 (মিল্টন) <br>
+        ➤ Winner: <span class="winner">মিল্টন</span>
+    </div>
+</div>
+
+<!-- Semi Finals -->
+<div class="round">
+    <h2>♟️ Semi Finals</h2>
+
+    <div class="match">
+        সাত্তার vs রাকিব
+    </div>
+
+    <div class="match">
+        মিশু vs মিল্টন
+    </div>
+</div>
+
+<!-- Final -->
+<div class="round">
+    <h2>♟️ Final</h2>
+    <div class="match">
+        Winner SF 1 vs Winner SF 2
+    </div>
+</div>
 <h1 style="text-align:center;">অংশগ্রহণকারী</h1>
 <table id="contactTable">
     <thead>
@@ -629,132 +645,6 @@ window.onclick = e => {
     document.getElementById('resultModal').style.display = 'none';
 };
 </script>
-<div id="tieModal" class="modal">
-  <div class="modal-box">
-    <span class="close">×</span>
-    <h3 id="tiePlayer"></h3>
-    <div id="tieResult"></div>
-  </div>
-</div>
-
-
-<style>
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.6);
-  z-index:9999;
-}
-
-.modal-box {
-    background: linear-gradient(180deg, #ffffff, #fafafa);
-    width: 95%;
-    max-width: 420px;
-    margin: 12vh auto;
-    padding: 20px 22px;
-    border-radius: 16px;
-
-    /* Soft elevation */
-    box-shadow: 
-        0 10px 25px rgba(0, 0, 0, 0.12),
-        0 2px 6px rgba(0, 0, 0, 0.08);
-
-    /* Subtle animation */
-    animation: modalFadeIn 0.25s ease-out;
-}
-
-/* Smooth entrance */
-@keyframes modalFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(12px) scale(0.97);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-.close{
-  float:right;
-  font-size:26px;
-  cursor:pointer;
-}
-</style>
-
-
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-<script>
-$(function(){
-
-  $(".group-table .name").on("click", function(){
-
-    const $row = $(this).closest("tr");
-    const $table = $(this).closest("table");
-    const player = $(this).text().trim();
-
-    let sb = 0;
-    let wins = 0;
-
-    const opponents = $table.find("tr:eq(1) th:gt(0):not(:last)").map(function(){
-      return $(this).text().trim();
-    }).get();
-
-    console.log(opponents);
-
-    $row.find("td").each(function(i){
-
-
-      const result = $(this).text().trim();
-      if(!result || result === "—"|| result === "Total") return;
-
-      const opponent = opponents[i];
-
-      const $opRow = $table.find("th.name").filter(function(){
-        return $(this).text().trim() === opponent;
-      }).closest("tr");
-
-      const opponentScore = parseFloat(
-        $opRow.find(".total").data("total")
-      ) || 0;
-
-      console.log($opRow.find("th.name").text(),opponentScore,result);
-
-      if(result == "2"){
-        sb += opponentScore;
-        wins++;
-      }
-
-      if(result == "1"){
-        sb += opponentScore / 2;
-      }
-
-      console.log(sb);
-    });
-
-    $("#tiePlayer").text(player + " – Tie Break");
-
-    $("#tieResult").html(`
-      <ul>
-        <li><b>Tie Break 1:</b> Head-to-head result</li>
-        <li><b>Tie Break 2:</b> Sonneborn–Berger = ${sb.toFixed(2)}</li>
-        <li><b>Tie Break 3:</b> Total Wins = ${wins}</li>
-      </ul>
-    `);
-
-    $("#tieModal").fadeIn();
-
-  });
-
-  $(".close, .modal").on("click", function(e){
-    if(e.target === this) $("#tieModal").fadeOut();
-  });
-
-});
-</script>
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <div class="qr-card remove-on-print">
